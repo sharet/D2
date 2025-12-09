@@ -1,0 +1,9 @@
+Password derivation:
+1. apply bcrypt with salt '$2a$14$.12345678901234512345.'. i.e. 2^14 rounds, bcrypt result prefix as specified.
+2. take SHA512 of result and convert to hex string
+
+encryption is similar to
+openssl enc -d -aes-256-cbc -pbkdf2 -iter 1 -md sha512 -pass pass:{key} -salt
+to decrypt, use
+  openssl enc -aes-256-cbc -pbkdf2 -iter 1 -md sha512 -pass pass:{key} -salt | gzip -d
+
