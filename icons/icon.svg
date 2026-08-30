@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Source icon for the "Dear Diary" PWA. The PNG variants shipped alongside it
+  (icon-192.png / icon-512.png / icon-maskable-512.png, plus /apple-touch-icon.png
+  and /favicon.ico at the webroot root) are rendered from this artwork by
+  fine-spa/build-icons.py. Re-run that script after editing this file.
+
+  Glyph: a closed notebook (white) with a bookmark ribbon and three text lines,
+  on the app's only accent colour (#0366d6).
+-->
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
   <rect width="512" height="512" rx="112" fill="#0366d6"/>
   <g transform="translate(146 96)">

@@ -1,3 +1,20 @@
+/*
+ * Dear Diary - PWA glue (plain JS, no build step).
+ *
+ * Loaded as a prod-only <head> script (fine-spa/build.gradle.kts's webExtraHeadScripts, a
+ * deliberate divergence from ClientDevMain.VENDOR_SCRIPTS - a service worker would shadow
+ * :watch's recompiled JS/CSS in dev). Registers ./sw.js (document-relative, so the whole
+ * bundle is folder-agnostic - works at the site root or in any subfolder), tracks
+ * install/update availability, and exposes globals the TeaVM side reads via
+ * app.services.PwaService:
+ *
+ *   window.finePwaState()  -> "none" | "install" | "update"
+ *   window.finePwaAction() -> show the install prompt, or apply a waiting update
+ *
+ * and dispatches a plain "finepwachange" Event on window whenever finePwaState() may have
+ * changed (app.services.PwaService.CHANGE_EVENT; LoginJs listens with an EventListener). No
+ * callback global - a @JSFunctor round-trip is fragile under this TeaVM/Closure build.
+ */
 (function () {
   "use strict";
 
@@ -74,7 +91,9 @@
 
   window.addEventListener("load", function () {
     var version = window["site_version"] || "dev";
-    navigator.serviceWorker.register("/sw.js?v=" + encodeURIComponent(version)).then(function (reg) {
+    // "sw.js", not "/sw.js": resolves against the document base (the <base href> the shell's
+    // inline bootstrap installed), so the SW scope is the app's mount folder, not the origin.
+    navigator.serviceWorker.register("sw.js?v=" + encodeURIComponent(version)).then(function (reg) {
       if (reg.waiting && navigator.serviceWorker.controller) {
         updateWaiting = reg.waiting;
         notify();
