@@ -1,0 +1,70 @@
+{
+  "pages.login.LoginCss" : {
+    "submitButton" : "c",
+    "install" : "f",
+    "label" : "b",
+    "error" : "d",
+    "code" : "h",
+    "root" : "g",
+    "base" : "a",
+    "loginForm" : "e"
+  },
+  "blocks.bs.Bs" : {
+    "flexColumn" : "i",
+    "flexRow" : "ad",
+    "mb3" : "k",
+    "px1" : "x",
+    "mb1" : "w",
+    "mlauto" : "j",
+    "gap2" : "l",
+    "hidden" : "au",
+    "btn" : "av",
+    "mb4" : "z",
+    "block" : "y"
+  },
+  "pages.entry.EntryPageCss" : {
+    "viewButton" : "ak",
+    "attachFileInput" : "am",
+    "preview" : "an",
+    "viewButtonInput" : "ao",
+    "editButtonInput" : "ap",
+    "editButton" : "ar",
+    "tags" : "al",
+    "saveButton" : "aq",
+    "root" : "as",
+    "versions" : "af",
+    "attachFileButton" : "ah",
+    "toggleButtonSelected" : "a3",
+    "hidden" : "at",
+    "edit" : "ae",
+    "toggleButton" : "ag",
+    "formRow" : "ai",
+    "text" : "aj",
+    "dropHighlight" : "a2"
+  },
+  "pages.entries.EntriesCss" : {
+    "entryTags" : "n",
+    "tag" : "o",
+    "entryDate" : "u",
+    "currentTag" : "v",
+    "search" : "t",
+    "root" : "s",
+    "entries" : "q",
+    "reloadIndexButton" : "r",
+    "entry" : "m",
+    "tagFilter" : "p"
+  },
+  "blocks.splitButton.SplitButtonCss" : {
+    "menu" : "ax",
+    "buttonMain" : "az",
+    "menuShow" : "a1",
+    "splitButton" : "a0",
+    "buttonToggle" : "aw",
+    "container" : "ay"
+  },
+  "blocks.index.Index1Css" : {
+    "root" : "ab",
+    "logout" : "aa",
+    "sync" : "ac"
+  }
+}
